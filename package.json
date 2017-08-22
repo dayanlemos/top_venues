@@ -1,0 +1,23 @@
+{
+  "name": "top_venues",
+  "version": "1.0.0",
+  "description": "List the top venues in Dublin, Ireland, using Foursquare API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dayanlemos/top_venues.git"
+  },
+  "author": "Dayan Lemos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dayanlemos/top_venues/issues"
+  },
+  "homepage": "https://github.com/dayanlemos/top_venues#readme",
+  "dependencies": {
+    "angular": "^1.6.6",
+    "angular-ui-router": "^1.0.3"
+  }
+}

@@ -1,0 +1,1 @@
+var topVenuesModule = angular.module('topVenuesModule',[]);
