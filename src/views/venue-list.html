@@ -1,1 +1,21 @@
-<h1>Venue List</h1>
+<div class="container">
+
+    <h2 class="label-commom">Top venues in {{venues.headerLocation}}</h2>
+
+    <br>
+
+    <div class="group-container" ng-repeat="group in venues.groups">
+        <div ui-sref="venue-details({id:item.venue.id})" class="row item-container" ng-repeat="item in group.items">
+            <div class="col-sm-8">
+                <h3 class="label-commom">{{item.venue.name}}  <small class="rating" ng-style="{background:'#{{item.venue.ratingColor}}'}">{{item.venue.rating}}</small></h3>
+                <small>{{item.venue.categories[0].pluralName}}</small><br>
+                <small class="label-address">{{item.venue.location.address}}</small>
+            </div>
+            <div class="col-sm-4 item-img-container">
+                <img src="https://fakeimg.pl/150/" class="img-thumbnail item-img">
+            </div>
+        </div>
+    </div>
+
+</div>
+

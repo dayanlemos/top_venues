@@ -1,1 +1,62 @@
-<h1>Venue Details</h1>
+<style>
+
+</style>
+
+
+<div class="container">
+
+    <br>
+
+    <button class="btn btn-default" ui-sref="venue-list">Back to list</button>
+
+    <hr>
+
+    <div>
+        <div id="slides_control">
+            <div>
+                <carousel interval="myInterval">
+                    <slide ng-repeat="slide in slides" active="slide.active">
+                        <img ng-src="{{slide.image}}">
+                        <div class="carousel-caption">
+                            <h4>Slide {{$index+1}}</h4>
+                        </div>
+                    </slide>
+                </carousel>
+            </div>
+        </div>
+    </div>
+
+    <h1 class="label-commom">
+        {{venue.name}}
+        <small class="rating" style="background:#{{venue.ratingColor}}">
+            {{venue.rating}}
+        </small>
+
+        <div class="checkins-container">
+            {{venue.stats.checkinsCount}}
+            <small>checkins</small>
+        </div>
+    </h1>
+
+    <small ng-repeat="category in venue.categories">{{category.name}}</small>
+
+    <div class="contact-container">
+        <p><b>Phone: </b>{{venue.contact.formattedPhone}}</p>
+    </div>
+
+    <hr>
+
+    <div class="tips-container">
+        <h3>Tips</h3>
+        <div class="row tip" ng-repeat="tip in venue.tips.groups[0].items">
+            <div class="col-sm-12">
+                <p>{{tip.text}}</p>
+                <small><i>{{tip.user.firstName}} {{tip.user.lastName}}</i></small>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+

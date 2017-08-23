@@ -1,10 +1,13 @@
-angular.module('topVenuesModule',['ui.router'])
+angular.module('topVenuesModule',['ui.router', 'ui.bootstrap'])
 
-.config(['$stateProvider', '$locationProvider', function ($stateProvider, $locationProvider) {
+.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function ($stateProvider, $urlRouterProvider, $locationProvider) {
+
+    $urlRouterProvider.otherwise('venue-list');
 
     $locationProvider.hashPrefix('');
 
     $stateProvider.state({
+        cache: false,
         name: 'venue-list',
         url: '/venue-list',
         templateUrl: 'views/venue-list.html',
@@ -17,3 +20,4 @@ angular.module('topVenuesModule',['ui.router'])
         controller: 'VenueDetailsCtrl'
     });
 }]);
+
