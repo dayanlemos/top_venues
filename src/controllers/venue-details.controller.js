@@ -3,8 +3,6 @@ angular.module('topVenuesModule').controller('VenueDetailsCtrl', ['$scope', '$st
     var venueId = $stateParams.id;
 
     $scope.venue = {};
-
-
     $scope.myInterval = 3000;
     $scope.slides = [];
 
@@ -15,7 +13,6 @@ angular.module('topVenuesModule').controller('VenueDetailsCtrl', ['$scope', '$st
                 image: item.prefix+'1200x300'+item.suffix
             });
         });
-        console.log(res);
     }, function (err) {
         console.log(err);
     });
