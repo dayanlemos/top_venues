@@ -1,7 +1,7 @@
 # Top Venues
 List the top venues in Dublin, Ireland, using Foursquare API.
 
-##Development
+## Development
 
 Update dependencies
 
@@ -15,7 +15,7 @@ Run app
 npm start
 ```
 
-Now browse to the app at [`localhost`]
+Then browse to the app at [`localhost`]
 
 
 ### JS Libs used ###
