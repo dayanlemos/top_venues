@@ -5,7 +5,7 @@ angular.module('topVenuesModule').service('VenueService', ['$http', '$q', functi
         getVenues: function () {
 
             var api_method = '/venues/explore';
-            var api_default_params = 'near=Dublin,Ireland&limit=20&section=topPicks';
+            var api_default_params = 'near=Dublin,Ireland&limit=20&section=topPicks&venuePhotos=1';
 
             return $q(function (resolve, reject) {
                 $http.get( API_FOURSQUARE_URL + api_method+'?'+api_default_params+'&client_id='+API_FOURSQUARE_CLIENT_ID+'+&client_secret='+API_FOURSQUARE_CLIENT_SECRET+'&v=20171212').then(function (res){

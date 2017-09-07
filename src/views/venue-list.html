@@ -1,21 +1,41 @@
 <div class="container">
+    
+    <div class="logo-container">
+        <img src="images/likewhere-logo.png">
+    </div>
+
+    <hr>
 
     <h2 class="label-commom">Top venues in {{venues.headerLocation}}</h2>
 
     <br>
 
-    <div class="group-container" ng-repeat="group in venues.groups">
-        <div ui-sref="venue-details({id:item.venue.id})" class="row item-container" ng-repeat="item in group.items">
-            <div class="col-sm-8">
-                <h3 class="label-commom">{{item.venue.name}}  <small class="rating" ng-style="{background:'#{{item.venue.ratingColor}}'}">{{item.venue.rating}}</small></h3>
-                <small>{{item.venue.categories[0].pluralName}}</small><br>
-                <small class="label-address">{{item.venue.location.address}}</small>
-            </div>
-            <div class="col-sm-4 item-img-container">
-                <img src="https://fakeimg.pl/150/" class="img-thumbnail item-img">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="group-container" ng-repeat="group in venues.groups">
+                <div class="thumbnail" ng-repeat="item in group.items" style="width: 300px; float: left; margin: 20px">
+                    <img ng-src="{{item.venue.photos.groups[0].items[0].prefix+'300x200'+item.venue.photos.groups[0].items[0].suffix}}" alt="...">
+                    <div class="caption">
+
+                        <h3>{{item.venue.name}}</h3>
+                        <p>
+                            <small class="rating" ng-style="{background:'#{{item.venue.ratingColor}}'}">{{item.venue.rating}}</small>
+                        </p>
+                        <p>
+                            <small>{{item.venue.categories[0].pluralName}}</small><br>
+                            <small class="label-address">{{item.venue.location.address}}</small>
+                        </p>
+
+                        <p>
+                            <a ui-sref="venue-details({id:item.venue.id})" class="btn btn-default" role="button">See more...</a>
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
+    <hr>
 
 </div>
 
