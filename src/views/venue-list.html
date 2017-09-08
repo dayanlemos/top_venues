@@ -1,19 +1,23 @@
 <div class="container">
     
     <div class="logo-container">
-        <img src="images/likewhere-logo.png">
+        <a ui-sref="venue-list({page:1})">
+            <img src="images/likewhere-logo.png">
+        </a>
     </div>
 
     <hr>
 
-    <h2 class="label-commom">Top venues in {{venues.headerLocation}}</h2>
+    <h2 class="label-commom">Top venues in {{location}}</h2>
 
     <br>
 
+
+
     <div class="row">
-        <div class="col-sm-12">
+        <div class="col-sm-12" style="min-height: 800px">
             <div class="group-container" ng-repeat="group in venues.groups">
-                <div class="thumbnail" ng-repeat="item in group.items" style="width: 300px; float: left; margin: 20px">
+                <div class="thumbnail" ng-repeat="item in group.items" style="width: 300px; min-height: 460px; float: left; margin: 20px">
                     <img ng-src="{{item.venue.photos.groups[0].items[0].prefix+'300x200'+item.venue.photos.groups[0].items[0].suffix}}" alt="...">
                     <div class="caption">
 
@@ -27,15 +31,28 @@
                         </p>
 
                         <p>
-                            <a ui-sref="venue-details({id:item.venue.id})" class="btn btn-default" role="button">See more...</a>
+                            <a ui-sref="venue-details({page:currentPage, id:item.venue.id})" class="btn btn-default" role="button">See more...</a>
                         </p>
                     </div>
                 </div>
+
+
+
             </div>
         </div>
     </div>
 
+    <div class="row">
+        <div class="col-sm-12">
+            <ul pagination items-per-page="itemsPerPage" total-items="totalItems" page="currentPage" on-select-page="pageChanged(page)"></ul>
+        </div>
+    </div>
+
+
+
     <hr>
+
+
 
 </div>
 
